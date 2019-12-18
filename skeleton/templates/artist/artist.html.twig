@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail de l'artiste{% endblock %}
+
+{% block body %}
+    <h1>Détail de l'artiste : {{artist.name}}</h1>
+    <img src="D:/wamp64/www/nation_sounds_backoffice/{{artist.picture}}">
+    {{artist.description}}
+{% endblock %}

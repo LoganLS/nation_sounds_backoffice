@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un concert{% endblock %}
+
+{% block body %}
+    <h1>Détail d'un concert :</h1>
+    {{show.artist.name}}
+    {{show.stage.name}}
+    {{show.dateStart|date('d/m/Y H:i')}}
+    {{show.dateEnd|date('d/m/Y H:i')}}
+{% endblock %}

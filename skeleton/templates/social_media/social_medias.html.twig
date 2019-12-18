@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les réseaux sociaux{% endblock %}
+
+{% block body %}
+    <a href="{{path('new_social_media')}}">Ajouter un réseau social</a>
+    <h1>Les réseaux sociaux</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Réseau social</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for social_media in social_medias %}
+                <tr>
+                    <td>{{social_media.social}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('social_media',{'id': social_media.id}) }}">DETAIL</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('update_social_media',{'id':social_media.id}) }}">MODIFIER</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('delete_social_media',{'id':social_media.id}) }}">SUPPRIMER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

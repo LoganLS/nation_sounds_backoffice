@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'une scène{% endblock %}
+
+{% block body %}
+    <h1>Détail d'une scène : {{stage.name}}</h1>
+    {{stage.latitude}}
+    {{stage.longitude}}
+{% endblock %}

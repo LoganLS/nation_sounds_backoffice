@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une rencontre{% endblock %}
+
+{% block body %}
+    <h1>Modifier une rencontre</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.artist, {'label':'Artiste'}) }}
+        {{ form_row(form.dateStart, {'label':'Date de début'}) }}
+        {{ form_row(form.dateEnd, {'label':'Date de fin'}) }}
+        <button type="submit">Modifier la rencontre</button>
+    {{ form_end(form) }}
+{% endblock %}

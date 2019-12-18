@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un concert{% endblock %}
+
+{% block body %}
+    <h1>Modifier un concert</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.artist, {'label':'Artiste'}) }}
+        {{ form_row(form.stage, {'label':'Scène'}) }}
+        {{ form_row(form.dateStart, {'label':'Date de début'}) }}
+        {{ form_row(form.dateEnd, {'label':'Date de fin'}) }}
+        <button type="submit">Modifier le concert</button>
+    {{ form_end(form) }}
+{% endblock %}

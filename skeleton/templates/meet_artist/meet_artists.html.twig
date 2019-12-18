@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rencontre artiste{% endblock %}
+
+{% block body %}
+    <a href="{{path('new_meet_artist')}}">Ajouter une rencontre</a>
+    <h1>Les rencontres avec les artistes</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Artiste</td>
+                <td>Date début</td>
+                <td>Date fin</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for meet_artist in meet_artists %}
+                <tr>
+                    <td>{{meet_artist.artist.name}}</td>
+                    <td>{{meet_artist.dateStart|date('d/m/Y H:i')}}</td>
+                    <td>{{meet_artist.dateEnd|date('d/m/Y H:i')}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('meet_artist',{'id': meet_artist.id}) }}">DETAIL</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('update_meet_artist',{'id':meet_artist.id}) }}">MODIFIER</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('delete_meet_artist',{'id':meet_artist.id}) }}">SUPPRIMER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

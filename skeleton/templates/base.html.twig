@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% if app.user %}
+        <nav>
+            <ul>
+                <li><a href="{{path('home')}}">Accueil</a></li>
+                <li><a href="{{path('artists')}}">Artistes</a></li>
+                <li><a href="{{path('shows')}}">Concerts</a></li>
+                <li><a href="{{path('faqs')}}">F.A.Q</a></li>
+                <li><a href="{{path('maps')}}">Map</a></li>
+                <li><a href="{{path('partners')}}">Partenaires</a></li>
+                <li><a href="{{path('meet_artists')}}">Rencontres artistes</a></li>
+                <li><a href="{{path('social_medias')}}">Réseaux sociaux</a></li>
+                <li><a href="{{path('stages')}}">Scènes</a></li>
+                <li><a href="{{ path('security_logout')}}">Déconnexion</a></li>
+            </ul>
+        {% endif %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

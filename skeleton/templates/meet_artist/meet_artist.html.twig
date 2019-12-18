@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'une rencontre{% endblock %}
+
+{% block body %}
+    <h1>Détail d'une rencontre : {{meet_artist.artist.name}}</h1>
+    {{meet_artist.dateStart|date('d/m/Y H:i')}}
+    {{meet_artist.dateEnd|date('d/m/Y H:i')}}
+{% endblock %}

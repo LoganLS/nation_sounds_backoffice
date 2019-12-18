@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un point de coordonnée{% endblock %}
+
+{% block body %}
+    <h1>Modifier un nouveau point de coordonnée</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.label, {'label':'Label','attr':{'placeholder':'Label'}}) }}
+        {{ form_row(form.description, {'label':'Description','attr':{'placeholder':'Description'}}) }}
+        {{ form_row(form.class_icon, {'label':'Class icon','attr':{'placeholder':'Class icon'}}) }}
+        {{ form_row(form.color, {'label':'Couleur','attr':{'placeholder':'Couleur'}}) }}
+        {{ form_row(form.latitude, {'label':'Latitude','attr':{'placeholder':'Latitude'}}) }}
+        {{ form_row(form.longitude, {'label':'Longitude','attr':{'placeholder':'Longitude'}}) }}
+        <button type="submit">Modifier le point de coordonnée</button>
+    {{ form_end(form) }}
+{% endblock %}

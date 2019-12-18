@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une nouvelle question / réponse{% endblock %}
+
+{% block body %}
+    <h1>Modifier une nouvelle question / réponse </h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.question, {'label':'Question','attr':{'placeholder':'Question'}}) }}
+        {{ form_row(form.answer, {'label':'Réponse','attr':{'placeholder':'Réponse'}}) }}
+        <button type="submit">Modifier la question / réponse</button>
+    {{ form_end(form) }}
+{% endblock %}

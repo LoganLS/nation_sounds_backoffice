@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Concerts{% endblock %}
+
+{% block body %}
+    <a href="{{path('new_show')}}">Ajouter un concert</a>
+    <h1>Les concerts</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Artiste</td>
+                <td>Scène</td>
+                <td>Date début</td>
+                <td>Date fin</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for show in shows %}
+                <tr>
+                    <td>{{show.artist.name}}</td>
+                    <td>{{show.stage.name}}
+                    <td>{{show.dateStart|date('d/m/Y H:i')}}</td>
+                    <td>{{show.dateEnd|date('d/m/Y H:i')}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('show',{'id': show.id}) }}">DETAIL</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('update_show',{'id':show.id}) }}">MODIFIER</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('delete_show',{'id':show.id}) }}">SUPPRIMER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une scène{% endblock %}
+
+{% block body %}
+    <h1>Modifier une scène</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.name, {'label':'Nom','attr':{'placeholder':'Nom'}}) }}
+        {{ form_row(form.latitude, {'label':'Latitude','attr':{'placeholder':'Latitude'}}) }}
+        {{ form_row(form.longitude, {'label':'Longitude','attr':{'placeholder':'Longitude'}}) }}
+        <button type="submit">Modifier la scène</button>
+    {{ form_end(form) }}
+{% endblock %}

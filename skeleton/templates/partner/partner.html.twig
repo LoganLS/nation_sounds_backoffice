@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un partenaire{% endblock %}
+
+{% block body %}
+    <h1>Détail d'un partenaire : {{partner.label}}</h1>
+    {{partner.picture}}
+    {{partner.url}}
+{% endblock %}

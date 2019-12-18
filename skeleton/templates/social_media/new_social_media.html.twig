@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un réseau social{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un réseau social</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.social, {'label':'Réseau social','attr':{'placeholder':'Réseau social'}}) }}
+        {{ form_row(form.icon, {'label':'Image','attr':{'placeholder':'Image'}}) }}
+        {{ form_row(form.url, {'label':'URL','attr':{'placeholder':'URL'}}) }}
+        <button type="submit">Ajouter le réseau social</button>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un point de coordonnée{% endblock %}
+
+{% block body %}
+    <h1>Détail d'un point de coordonnee : {{map.label}}</h1>
+    {{map.description}}
+    {{map.classIcon}}
+    {{map.color}}
+    {{map.latitude}}
+    {{map.longitude}}
+{% endblock %}

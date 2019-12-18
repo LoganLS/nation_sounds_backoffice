@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'un réseau social{% endblock %}
+
+{% block body %}
+    <h1>Détail d'un réseau social : {{social_media.social}}</h1>
+    {{social_media.icon}}
+    {{social_media.url}}
+{% endblock %}

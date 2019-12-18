@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Map{% endblock %}
+
+{% block body %}
+    <a href="{{path('new_map')}}">Ajouter un point sur la map</a>
+    <h1>Les points sur la map</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Label</td>
+                <td>Icône</td>
+                <td>Latitude</td>
+                <td>Longitude</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for map in maps %}
+                <tr>
+                    <td>{{map.label}}</td>
+                    <td>{{map.classIcon}}</td>
+                    <td>{{map.latitude}}</td>
+                    <td>{{map.longitude}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('map',{'id': map.id}) }}">DETAIL</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('update_map',{'id':map.id}) }}">MODIFIER</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('delete_map',{'id':map.id}) }}">SUPPRIMER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter artiste{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un nouvel artiste</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.name, {'label':'Nom de l\'artiste','attr':{'placeholder':'Nom de l\'artiste'}}) }}
+        {{ form_row(form.description, {'label':'Description','attr':{'placeholder':'Description'}}) }}
+        {{ form_row(form.picture, {'label':'Photo','attr':{'placeholder':'Photo'}}) }}
+        <button type="submit">Ajouter l'artiste</button>
+    {{ form_end(form) }}
+{% endblock %}

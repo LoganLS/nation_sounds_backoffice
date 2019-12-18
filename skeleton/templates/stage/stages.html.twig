@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les scènes{% endblock %}
+
+{% block body %}
+    <a href="{{path('new_stage')}}">Ajouter une scène</a>
+    <h1>Les scènes</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Nom</td>
+                <td>Latitude</td>
+                <td>Longitude</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stage in stages %}
+                <tr>
+                    <td>{{stage.name}}</td>
+                    <td>{{stage.latitude}}</td>
+                    <td>{{stage.longitude}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('stage',{'id': stage.id}) }}">DETAIL</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('update_stage',{'id':stage.id}) }}">MODIFIER</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('delete_stage',{'id':stage.id}) }}">SUPPRIMER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
